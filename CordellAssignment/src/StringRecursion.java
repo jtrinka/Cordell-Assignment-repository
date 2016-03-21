@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+
 
 
 public class StringRecursion {
@@ -6,29 +6,43 @@ public class StringRecursion {
 	
 	
 
-private static String word;
 	
 	
 	
-	public static String wordrecursion(){
+	public static String wordrecursion(String word){
 		
 		
 		
 		
 		
-		
-			 word=JOptionPane.showInputDialog("Enter a word"); //enter in a word
+		char a;
 			 
-			 String wordarr[] = word.split("(?!^)"); // www.stackexchange.com splits word into different characters and puts each character into a separate array index where the array name is wordarr
+		
 			 
-			for (int i = 0; i < wordarr.length; ++i){ //run for the length of the wordarr array
+			 
+			 int arraylen = word.length();
+		char wordarr[] = new char[arraylen];
+				
+				if (word == null || word.equals("")) //www.stackexchange.com
+			    {
+			        return word;
+			    }
+			    else
+			    {
+			    	a=word.charAt(0);
+			        System.out.println(word.charAt(0));
+			       wordarr[0]=a;
+			       System.out.println(wordarr);
+			        return wordrecursion(word.substring(1, word.length()));
+			        
+			    }
 				
 				
+				 //print out each index of wordarr array
 				
-				System.out.println(wordarr[i]); //print out each index of wordarr array
-				
-			}
 			
-			return word;
+			
+			 
+			 
 	}
 }
